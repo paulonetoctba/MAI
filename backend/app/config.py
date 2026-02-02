@@ -164,9 +164,56 @@ class Settings(BaseSettings):
     
     ORACLE_COMMERCE_URL: str = ""
     
+    
     WIX_API_KEY: str = ""
     
     SQUARESPACE_API_KEY: str = ""
+    
+    # --- LATAM ECOMMERCE ---
+    NUVEMSHOP_CLIENT_ID: str = ""
+    NUVEMSHOP_CLIENT_SECRET: str = ""
+    NUVEMSHOP_ACCESS_TOKEN: str = ""
+    
+    LOJA_INTEGRADA_API_KEY: str = ""
+    LOJA_INTEGRADA_APP_KEY: str = ""
+    
+    TRAY_CONSUMER_KEY: str = ""
+    TRAY_CONSUMER_SECRET: str = ""
+    TRAY_CODE: str = ""
+    
+    YAMPI_USER_TOKEN: str = ""
+    YAMPI_USER_SECRET: str = ""
+    
+    WAKE_COMMERCE_TOKEN: str = ""
+    
+    VNDA_ACCESS_TOKEN: str = ""
+    VNDA_HOST: str = ""
+    
+    DOOCA_TOKEN: str = ""
+    
+    JET_COMMERCE_CLIENT_ID: str = ""
+    JET_COMMERCE_CLIENT_SECRET: str = ""
+    
+    # --- HEADLESS / ENTERPRISE COMMERCE ---
+    COMMERCETOOLS_CLIENT_ID: str = ""
+    COMMERCETOOLS_CLIENT_SECRET: str = ""
+    COMMERCETOOLS_PROJECT_KEY: str = ""
+    
+    ELASTIC_PATH_CLIENT_ID: str = ""
+    ELASTIC_PATH_CLIENT_SECRET: str = ""
+    
+    VTEX_IO_ACCOUNT: str = "" 
+    VTEX_IO_WORKSPACE: str = ""
+    VTEX_IO_APP_KEY: str = ""
+    VTEX_IO_APP_TOKEN: str = ""
+    
+    FABRIC_API_KEY: str = ""
+    FABRIC_ACCOUNT_ID: str = ""
+    
+    COMMERCE_LAYER_CLIENT_ID: str = ""
+    COMMERCE_LAYER_CLIENT_SECRET: str = ""
+    
+    SCALEFAST_API_KEY: str = ""
 
     class Config:
         env_file = ".env"
