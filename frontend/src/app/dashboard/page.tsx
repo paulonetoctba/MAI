@@ -112,9 +112,9 @@ export default function DashboardPage() {
                 <ROASChart data={roasData} className="lg:col-span-2" />
 
                 {/* Recent Decisions */}
-                <div className="p-6 rounded-2xl bg-dark-900 border border-white/5">
-                    <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-lg font-semibold text-white">Decisões Recentes</h3>
+                <div className="p-7.5 rounded-sm bg-white border border-gray-200 shadow-default">
+                    <div className="flex items-center justify-between mb-6">
+                        <h3 className="text-lg font-semibold text-black">Decisões Recentes</h3>
                         <Link
                             href="/dashboard/decisions"
                             className="text-sm text-mai-400 hover:text-mai-300 transition-colors"
@@ -129,15 +129,15 @@ export default function DashboardPage() {
                                 className="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
                             >
                                 <div className="flex items-start justify-between mb-2">
-                                    <p className="text-sm text-white line-clamp-1 flex-1">
+                                    <p className="text-sm text-black line-clamp-1 flex-1 font-medium">
                                         {decision.question}
                                     </p>
                                     <span
                                         className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${decision.decision === "EXECUTAR"
-                                                ? "bg-green-500/10 text-green-400"
-                                                : decision.decision === "AJUSTAR"
-                                                    ? "bg-yellow-500/10 text-yellow-400"
-                                                    : "bg-red-500/10 text-red-400"
+                                            ? "bg-green-500/10 text-green-400"
+                                            : decision.decision === "AJUSTAR"
+                                                ? "bg-yellow-500/10 text-yellow-400"
+                                                : "bg-red-500/10 text-red-400"
                                             }`}
                                     >
                                         {decision.decision}
@@ -194,14 +194,14 @@ function QuickAction({
     return (
         <Link
             href={href}
-            className="group p-5 rounded-2xl bg-dark-900 border border-white/5 hover:border-mai-500/30 transition-all duration-300"
+            className="group p-7.5 rounded-sm bg-white border border-gray-200 shadow-default hover:border-mai-500/30 transition-all duration-300"
         >
             <div className="flex items-center gap-4">
                 <div className="p-3 rounded-xl bg-mai-500/10 group-hover:bg-mai-500/20 transition-colors">
                     <Icon size={24} className="text-mai-400" />
                 </div>
                 <div className="flex-1">
-                    <h4 className="text-sm font-semibold text-white group-hover:text-mai-400 transition-colors">
+                    <h4 className="text-sm font-semibold text-black group-hover:text-mai-500 transition-colors">
                         {title}
                     </h4>
                     <p className="text-xs text-gray-500">{description}</p>

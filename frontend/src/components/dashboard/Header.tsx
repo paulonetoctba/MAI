@@ -8,19 +8,19 @@ export function Header() {
     const [showProfile, setShowProfile] = useState(false);
 
     return (
-        <header className="h-16 bg-dark-900/80 backdrop-blur-xl border-b border-white/5 flex items-center justify-between px-6 sticky top-0 z-30">
+        <header className="h-20 bg-white border-b border-stroke flex items-center justify-between px-6 sticky top-0 z-30 shadow-default">
             {/* Search */}
             <div className="relative w-96">
                 <Search
                     size={18}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
                 />
                 <input
                     type="text"
                     placeholder="Buscar decisões, campanhas..."
-                    className="w-full pl-10 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-mai-500/50 focus:ring-1 focus:ring-mai-500/50 transition-all font-medium"
+                    className="w-full pl-12 pr-4 py-2.5 bg-gray-100 border border-gray-200 rounded-xl text-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-mai-500/20 transition-all font-medium"
                 />
-                <kbd className="absolute right-3 top-1/2 -translate-y-1/2 px-2 py-0.5 bg-white/10 rounded text-xs text-gray-500 border border-white/5">
+                <kbd className="absolute right-4 top-1/2 -translate-y-1/2 px-2 py-0.5 bg-white rounded text-[10px] text-gray-400 border border-gray-200">
                     ⌘K
                 </kbd>
             </div>
@@ -31,16 +31,16 @@ export function Header() {
                 <div className="relative">
                     <button
                         onClick={() => setShowNotifications(!showNotifications)}
-                        className="relative p-2.5 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/5"
+                        className="relative p-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors border border-gray-200"
                     >
-                        <Bell size={18} className="text-gray-400" />
-                        <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-mai-500 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.5)]"></span>
+                        <Bell size={18} />
+                        <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
                     </button>
 
                     {showNotifications && (
-                        <div className="absolute right-0 top-full mt-2 w-80 bg-dark-900/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden animate-fade-in ring-1 ring-black/50">
-                            <div className="p-4 border-b border-white/5 bg-white/5">
-                                <h3 className="text-sm font-semibold text-white">Notificações</h3>
+                        <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-default overflow-hidden animate-fade-in ring-1 ring-black/5">
+                            <div className="p-4 border-b border-gray-100 bg-gray-50/50">
+                                <h3 className="text-sm font-semibold text-black">Notificações</h3>
                             </div>
                             <div className="max-h-80 overflow-y-auto custom-scrollbar">
                                 <NotificationItem
@@ -61,8 +61,8 @@ export function Header() {
                                     time="3 horas atrás"
                                 />
                             </div>
-                            <div className="p-3 border-t border-white/5 bg-white/5">
-                                <button className="w-full py-2 text-sm text-mai-500 hover:text-mai-400 font-medium transition-colors">
+                            <div className="p-3 border-t border-gray-100 bg-gray-50/50">
+                                <button className="w-full py-2 text-sm text-mai-500 hover:text-mai-600 font-medium transition-colors">
                                     Ver todas notificações
                                 </button>
                             </div>
@@ -74,31 +74,31 @@ export function Header() {
                 <div className="relative">
                     <button
                         onClick={() => setShowProfile(!showProfile)}
-                        className="flex items-center gap-3 p-1.5 pr-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/5"
+                        className="flex items-center gap-3 p-1.5 pr-3 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors border border-gray-200"
                     >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-mai-400 to-mai-600 flex items-center justify-center shadow-lg shadow-mai-500/20">
+                        <div className="w-8 h-8 rounded-lg bg-mai-500 flex items-center justify-center shadow-sm">
                             <User size={16} className="text-white" />
                         </div>
                         <div className="text-left hidden sm:block">
-                            <p className="text-sm font-semibold text-white">Paulo Beber</p>
-                            <p className="text-[10px] text-gray-500 uppercase tracking-wider font-bold">Admin</p>
+                            <p className="text-sm font-semibold text-black">Paulo Beber</p>
+                            <p className="text-[10px] text-gray-500 font-medium">Administrador</p>
                         </div>
-                        <ChevronDown size={16} className="text-gray-500" />
+                        <ChevronDown size={14} className="text-gray-400" />
                     </button>
 
                     {showProfile && (
-                        <div className="absolute right-0 top-full mt-2 w-56 bg-dark-900/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden animate-fade-in ring-1 ring-black/50">
-                            <div className="p-4 border-b border-white/5 bg-white/5">
-                                <p className="text-sm font-semibold text-white">Paulo Beber</p>
-                                <p className="text-xs text-gray-400">paulo@empresa.com</p>
+                        <div className="absolute right-0 top-full mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-default overflow-hidden animate-fade-in ring-1 ring-black/5">
+                            <div className="p-4 border-b border-gray-100 bg-gray-50/50">
+                                <p className="text-sm font-semibold text-black">Paulo Beber</p>
+                                <p className="text-xs text-gray-500">paulo@empresa.com</p>
                             </div>
                             <div className="p-2">
                                 <ProfileMenuItem label="Meu Perfil" />
                                 <ProfileMenuItem label="Configurações" />
                                 <ProfileMenuItem label="Suporte" />
                             </div>
-                            <div className="p-2 border-t border-white/5">
-                                <button className="w-full px-3 py-2 text-sm text-left text-red-400 hover:bg-red-500/10 rounded-lg transition-colors font-medium">
+                            <div className="p-2 border-t border-gray-100">
+                                <button className="w-full px-3 py-2 text-sm text-left text-red-500 hover:bg-red-50 rounded-lg transition-colors font-medium text-center">
                                     Sair
                                 </button>
                             </div>

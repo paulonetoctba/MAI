@@ -25,14 +25,14 @@ export function KPICard({
     return (
         <div
             className={cn(
-                "p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-white/10 transition-all duration-300",
+                "p-7.5 rounded-sm bg-white border border-gray-200 shadow-default transition-all duration-300",
                 className
             )}
         >
             <div className="flex items-start justify-between">
                 <div>
-                    <p className="text-sm text-gray-500 mb-1">{title}</p>
-                    <p className="text-3xl font-bold text-white">{value}</p>
+                    <p className="text-sm font-medium text-gray-500 mb-1.5">{title}</p>
+                    <p className="text-2xl font-bold text-black">{value}</p>
                 </div>
                 {Icon && (
                     <div className="p-3 rounded-xl bg-mai-500/10">

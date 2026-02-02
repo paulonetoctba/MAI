@@ -39,11 +39,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export function PerformanceChart({ data, className }: ChartProps) {
     return (
-        <div className={cn("p-6 rounded-2xl bg-dark-900 border border-white/5", className)}>
+        <div className={cn("p-7.5 rounded-sm bg-white border border-gray-200 shadow-default", className)}>
             <div className="flex items-center justify-between mb-6">
                 <div>
-                    <h3 className="text-lg font-semibold text-white">Performance</h3>
-                    <p className="text-sm text-gray-500">Últimos 30 dias</p>
+                    <h3 className="text-lg font-semibold text-black">Performance</h3>
+                    <p className="text-sm text-gray-400">Últimos 30 dias</p>
                 </div>
                 <div className="flex gap-4">
                     <ChartLegendItem color="#f59e0b" label="Spend" />
@@ -104,11 +104,11 @@ export function PerformanceChart({ data, className }: ChartProps) {
 
 export function ConversionsChart({ data, className }: ChartProps) {
     return (
-        <div className={cn("p-6 rounded-2xl bg-dark-900 border border-white/5", className)}>
+        <div className={cn("p-7.5 rounded-sm bg-white border border-gray-200 shadow-default", className)}>
             <div className="flex items-center justify-between mb-6">
                 <div>
-                    <h3 className="text-lg font-semibold text-white">Conversões por Canal</h3>
-                    <p className="text-sm text-gray-500">Esta semana</p>
+                    <h3 className="text-lg font-semibold text-black">Conversões por Canal</h3>
+                    <p className="text-sm text-gray-400">Esta semana</p>
                 </div>
             </div>
             <div className="h-64">
@@ -142,11 +142,11 @@ export function ConversionsChart({ data, className }: ChartProps) {
 
 export function ROASChart({ data, className }: ChartProps) {
     return (
-        <div className={cn("p-6 rounded-2xl bg-dark-900 border border-white/5", className)}>
+        <div className={cn("p-7.5 rounded-sm bg-white border border-gray-200 shadow-default", className)}>
             <div className="flex items-center justify-between mb-6">
                 <div>
-                    <h3 className="text-lg font-semibold text-white">ROAS por Campanha</h3>
-                    <p className="text-sm text-gray-500">Top 5 campanhas</p>
+                    <h3 className="text-lg font-semibold text-black">ROAS por Campanha</h3>
+                    <p className="text-sm text-gray-400">Top 5 campanhas</p>
                 </div>
             </div>
             <div className="h-64">

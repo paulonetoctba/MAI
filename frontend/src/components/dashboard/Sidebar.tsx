@@ -125,23 +125,23 @@ export function Sidebar() {
     return (
         <aside
             className={cn(
-                "fixed left-0 top-0 z-40 h-screen bg-dark-900 border-r border-white/5 transition-all duration-300 flex flex-col",
-                collapsed ? "w-16" : "w-72"
+                "fixed left-0 top-0 z-40 h-screen bg-dark-mix border-r border-white/5 transition-all duration-300 flex flex-col shadow-default",
+                collapsed ? "w-20" : "w-[290px]"
             )}
         >
             {/* Logo */}
-            <div className="h-16 flex items-center justify-between px-4 border-b border-white/5 bg-dark-950/50 backdrop-blur-md">
+            <div className="h-20 flex items-center justify-between px-6 border-b border-white/5 bg-dark-mix/50 backdrop-blur-md">
                 {!collapsed && <LogoFull />}
                 {collapsed && (
-                    <div className="w-8 h-8 rounded-lg bg-mai-500 flex items-center justify-center mx-auto">
-                        <span className="text-white font-bold text-sm">M</span>
+                    <div className="w-10 h-10 rounded-lg bg-mai-500 flex items-center justify-center mx-auto shadow-lg shadow-mai-500/20">
+                        <span className="text-white font-bold text-lg">M</span>
                     </div>
                 )}
                 <button
                     onClick={() => setCollapsed(!collapsed)}
                     className="p-1.5 rounded-lg hover:bg-white/5 text-gray-400 hover:text-mai-400 transition-colors"
                 >
-                    {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+                    {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
                 </button>
             </div>
 
@@ -161,7 +161,7 @@ export function Sidebar() {
                     {!collapsed && <span className="text-sm font-medium">Dashboard</span>}
                 </Link>
 
-                <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-3 mb-2">
+                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] px-3 mb-4 mt-6">
                     {!collapsed ? "Integrações" : "•••"}
                 </div>
 
@@ -194,7 +194,7 @@ export function Sidebar() {
                             </button>
 
                             {isExpanded && !collapsed && (
-                                <div className="ml-9 space-y-1 animate-fade-in border-l border-white/5 pl-2">
+                                <div className="ml-9 space-y-1 animate-fade-in border-l border-white/10 pl-2">
                                     {cat.items.map((item) => (
                                         <Link
                                             key={item.href}
@@ -217,7 +217,7 @@ export function Sidebar() {
             </nav>
 
             {/* Bottom Section */}
-            <div className="px-3 py-4 border-t border-white/5 bg-dark-950/30">
+            <div className="px-3 py-4 border-t border-white/5 bg-dark-mix/50">
                 <Link
                     href="/dashboard/settings"
                     className={cn(

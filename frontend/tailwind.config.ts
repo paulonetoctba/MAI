@@ -23,6 +23,7 @@ const config: Config = {
                     950: "#451a03",
                 },
                 dark: {
+                    mix: "#1C2434",
                     50: "#f9fafb",
                     100: "#f3f4f6",
                     200: "#e5e7eb",
@@ -35,6 +36,18 @@ const config: Config = {
                     900: "#111827",
                     950: "#030712",
                 },
+            },
+            boxShadow: {
+                default: "0px 8px 13px -3px rgba(0, 0, 0, 0.07)",
+                card: "0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24)",
+            },
+            spacing: {
+                4.5: "1.125rem",
+                5.5: "1.375rem",
+                6.5: "1.625rem",
+                7.5: "1.875rem",
+                8.5: "2.125rem",
+                9.5: "2.375rem",
             },
             fontFamily: {
                 sans: ["Inter", "system-ui", "sans-serif"],
