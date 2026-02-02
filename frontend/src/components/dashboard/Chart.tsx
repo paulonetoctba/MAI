@@ -46,7 +46,7 @@ export function PerformanceChart({ data, className }: ChartProps) {
                     <p className="text-sm text-gray-500">Últimos 30 dias</p>
                 </div>
                 <div className="flex gap-4">
-                    <ChartLegendItem color="#6366F1" label="Spend" />
+                    <ChartLegendItem color="#f59e0b" label="Spend" />
                     <ChartLegendItem color="#10B981" label="Revenue" />
                 </div>
             </div>
@@ -55,8 +55,8 @@ export function PerformanceChart({ data, className }: ChartProps) {
                     <AreaChart data={data}>
                         <defs>
                             <linearGradient id="colorSpend" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#6366F1" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#6366F1" stopOpacity={0} />
+                                <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.3} />
+                                <stop offset="95%" stopColor="#f59e0b" stopOpacity={0} />
                             </linearGradient>
                             <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="5%" stopColor="#10B981" stopOpacity={0.3} />
@@ -81,7 +81,7 @@ export function PerformanceChart({ data, className }: ChartProps) {
                             type="monotone"
                             dataKey="spend"
                             name="Spend"
-                            stroke="#6366F1"
+                            stroke="#f59e0b"
                             strokeWidth={2}
                             fillOpacity={1}
                             fill="url(#colorSpend)"
@@ -130,7 +130,7 @@ export function ConversionsChart({ data, className }: ChartProps) {
                         <Bar
                             dataKey="conversions"
                             name="Conversões"
-                            fill="#6366F1"
+                            fill="#f59e0b"
                             radius={[4, 4, 0, 0]}
                         />
                     </BarChart>
