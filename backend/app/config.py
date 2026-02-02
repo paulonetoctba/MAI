@@ -214,6 +214,9 @@ class Settings(BaseSettings):
     COMMERCE_LAYER_CLIENT_SECRET: str = ""
     
     SCALEFAST_API_KEY: str = ""
+    
+    # --- TOOLS ---
+    SEMRUSH_API_KEY: str = ""
 
     class Config:
         env_file = ".env"
