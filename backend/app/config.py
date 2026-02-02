@@ -67,6 +67,107 @@ class Settings(BaseSettings):
     VTEX_APP_KEY: str = ""
     VTEX_APP_TOKEN: str = ""
 
+    # --- ANALYTICS & INSIGHTS ---
+    GOOGLE_ANALYTICS_PROPERTY_ID: str = ""
+    GOOGLE_SEARCH_CONSOLE_SITE_URL: str = ""
+    
+    # --- ADS PLATFORMS ---
+    # Google & YouTube
+    YOUTUBE_ADS_DEVELOPER_TOKEN: str = ""
+    
+    # LinkedIn
+    LINKEDIN_CLIENT_ID: str = ""
+    LINKEDIN_CLIENT_SECRET: str = ""
+    LINKEDIN_ACCESS_TOKEN: str = ""
+    
+    # TikTok
+    TIKTOK_APP_ID: str = ""
+    TIKTOK_SECRET: str = ""
+    TIKTOK_ACCESS_TOKEN: str = ""
+    
+    # X (Twitter)
+    X_ADS_CONSUMER_KEY: str = ""
+    X_ADS_CONSUMER_SECRET: str = ""
+    X_ADS_ACCESS_TOKEN: str = ""
+    X_ADS_TOKEN_SECRET: str = ""
+    
+    # Pinterest
+    PINTEREST_APP_ID: str = ""
+    PINTEREST_APP_SECRET: str = ""
+    PINTEREST_ACCESS_TOKEN: str = ""
+    
+    # Reddit
+    REDDIT_CLIENT_ID: str = ""
+    REDDIT_CLIENT_SECRET: str = ""
+    REDDIT_ACCESS_TOKEN: str = ""
+    
+    # Retail Media (Amazon, ML, Shopee, Magalu, Walmart, AliExpress)
+    AMAZON_ADS_CLIENT_ID: str = ""
+    AMAZON_ADS_CLIENT_SECRET: str = ""
+    MERCADO_ADS_APP_ID: str = ""
+    MERCADO_ADS_SECRET: str = ""
+    SHOPEE_ADS_PARTNER_ID: str = ""
+    SHOPEE_ADS_KEY: str = ""
+    MAGALU_ADS_ID: str = ""
+    MAGALU_ADS_TOKEN: str = ""
+    WALMART_CLIENT_ID: str = ""
+    WALMART_CLIENT_SECRET: str = ""
+    ALIEXPRESS_APP_KEY: str = ""
+    ALIEXPRESS_SECRET: str = ""
+    
+    # Programmatic (DV360, TTD, Amazon DSP, Criteo, Adform)
+    DV360_CLIENT_ID: str = ""
+    DV360_CLIENT_SECRET: str = ""
+    THE_TRADE_DESK_LOGIN: str = ""
+    THE_TRADE_DESK_PASSWORD: str = ""
+    CRITEO_CLIENT_ID: str = ""
+    CRITEO_CLIENT_SECRET: str = ""
+    ADFORM_CLIENT_ID: str = ""
+    ADFORM_CLIENT_SECRET: str = ""
+
+    # --- CRM & MARKETING AUTOMATION ---
+    SALESFORCE_MC_CLIENT_ID: str = ""
+    SALESFORCE_MC_CLIENT_SECRET: str = ""
+    HUBSPOT_ACCESS_TOKEN: str = ""
+    RD_STATION_CLIENT_ID: str = ""
+    RD_STATION_CLIENT_SECRET: str = ""
+    MAILCHIMP_API_KEY: str = ""
+    MAILCHIMP_SERVER_PREFIX: str = ""
+    ACTIVECAMPAIGN_URL: str = ""
+    ACTIVECAMPAIGN_KEY: str = ""
+    KLAVIYO_PUBLIC_KEY: str = ""
+    KLAVIYO_PRIVATE_KEY: str = ""
+    BRAZE_API_KEY: str = ""
+    BRAZE_REST_ENDPOINT: str = ""
+
+    # --- COMMUNICATION ---
+    WHATSAPP_BUSINESS_TOKEN: str = ""
+    WHATSAPP_PHONE_NUMBER_ID: str = ""
+    TWILIO_ACCOUNT_SID: str = ""
+    TWILIO_AUTH_TOKEN: str = ""
+    SENDGRID_API_KEY: str = ""
+    FIREBASE_CREDENTIALS_PATH: str = ""
+
+    # --- ECOMMERCE PLATFORMS ---
+    # VTEX (Already added, keeping for reference)
+    # VTEX_ACCOUNT_NAME: str = "" ...
+    
+    SHOPIFY_SHOP_URL: str = ""
+    SHOPIFY_ACCESS_TOKEN: str = ""
+    
+    BIGCOMMERCE_STORE_HASH: str = ""
+    BIGCOMMERCE_ACCESS_TOKEN: str = ""
+    
+    SALESFORCE_CC_CLIENT_ID: str = ""
+    
+    SAP_COMMERCE_URL: str = ""
+    
+    ORACLE_COMMERCE_URL: str = ""
+    
+    WIX_API_KEY: str = ""
+    
+    SQUARESPACE_API_KEY: str = ""
+
     class Config:
         env_file = ".env"
         case_sensitive = True

@@ -17,8 +17,8 @@ from app.schemas.campaign import (
     AdPlatform,
 )
 from app.schemas.auth import MessageResponse
-from app.integrations.google_ads import GoogleAdsClient
-from app.integrations.meta_ads import MetaAdsClient
+from app.integrations.ads.google_ads import GoogleAdsClient
+from app.integrations.ads.meta_ads import MetaAdsClient
 
 router = APIRouter()
 
@@ -289,7 +289,7 @@ async def sync_tiktok_ads(
     """Sync campaigns from TikTok Ads"""
     
     try:
-        from app.integrations.tiktok_ads import TikTokAdsClient
+        from app.integrations.ads.tiktok_ads import TikTokAdsClient
         
         client = TikTokAdsClient(user_id=current_user.id)
         campaigns = await client.fetch_campaigns(
