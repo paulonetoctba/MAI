@@ -9,7 +9,7 @@ from loguru import logger
 import sys
 
 from app.config import settings
-from app.api.v1 import auth, decisions, users, campaigns, knowledge
+from app.api.v1 import auth, decisions, users, campaigns, knowledge, integrations
 
 # Configure logging
 logger.remove()
@@ -118,6 +118,12 @@ app.include_router(
     knowledge.router,
     prefix=f"{settings.API_V1_PREFIX}/knowledge",
     tags=["Knowledge"],
+)
+
+app.include_router(
+    integrations.router,
+    prefix=f"{settings.API_V1_PREFIX}/integrations",
+    tags=["Integrations"],
 )
 
 

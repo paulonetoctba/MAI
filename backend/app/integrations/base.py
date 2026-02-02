@@ -6,8 +6,9 @@ from app.config import settings
 class BaseIntegrationClient:
     """Base client for all integrations"""
     
-    def __init__(self, base_url: str):
+    def __init__(self, base_url: str, credentials: Optional[Dict] = None):
         self.base_url = base_url
+        self.credentials = credentials or {}
         self.headers: Dict[str, str] = {}
         
     async def _make_request(

@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
 
     # Database
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/mai"
+    DATABASE_URL: str = "sqlite+aiosqlite:///./app.db"
     DATABASE_POOL_SIZE: int = 20
 
     # Redis
