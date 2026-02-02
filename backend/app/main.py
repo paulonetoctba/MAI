@@ -47,7 +47,7 @@ app = FastAPI(
     * **MAI Decision Score™** - Scoring determinístico (Impacto × Urgência ÷ Risco)
     * **Validação Cruzada** - Segunda opinião estratégica
     * **RAG Multi-Namespace** - Conhecimento proprietário segmentado
-    * **Integração Ads** - Google Ads, Meta Ads
+    * **Integrações** - Ads (Google, Meta, TikTok), SEO (SEMrush), Ecommerce (VTEX, ML, etc.)
     """,
     version=settings.APP_VERSION,
     lifespan=lifespan,

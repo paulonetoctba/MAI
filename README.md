@@ -12,7 +12,9 @@ MAI é uma plataforma de Decision Intelligence focada em:
 - **MAI Decision Score™**: scoring determinístico (Impacto × Urgência ÷ Risco)
 - **Validação Cruzada**: segunda opinião estratégica
 - **RAG Multi-Namespace**: conhecimento proprietário segmentado
-- **Integração Ads**: Google Ads, Meta Ads (Facebook/Instagram)
+- **Integração Ads**: Google Ads, Meta Ads, TikTok Ads, Retail Media
+- **SEO & Ferramentas**: SEMrush integration
+- **Ecommerce**: VTEX, Mercado Livre, Nuvemshop, Tray, Loja Integrada
 
 ---
 
@@ -21,7 +23,7 @@ MAI é uma plataforma de Decision Intelligence focada em:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                      FRONTEND (Next.js)                      │
-│    Landing Page │ Auth Pages │ Dashboard │ Decision UI       │
+│    Landing Page │ Auth Pages │ Dashboard │ Integrations      │
 └───────────────────────────────┬─────────────────────────────┘
                                 │
                                 ▼
@@ -40,7 +42,9 @@ MAI é uma plataforma de Decision Intelligence focada em:
 │  ├── Funnel Economics        └── Unit Economics             │
 ├─────────────────────────────────────────────────────────────┤
 │  Integrações                                                 │
-│  ├── Google Ads API          └── Meta Ads API               │
+│  ├── Ads: Google, Meta, TikTok, Programmatic, Retail Media      │
+│  ├── Ecommerce: VTEX, Mercado Livre, Nuvemshop, Tray, LI    │
+│  └── Tools: SEMrush                                         │
 └───────────────────────────────┬─────────────────────────────┘
                                 │
                                 ▼
@@ -96,22 +100,25 @@ PROJETO/
 ├── frontend/                    # Next.js 14 + TailwindCSS
 │   ├── src/
 │   │   ├── app/                # App Router
-│   │   │   ├── auth/           # Login, Register, Forgot Password
+│   │   │   ├── auth/           # Login, Register, Password
+│   │   │   ├── dashboard/      # Dashboard Principal & Decisões
+│   │   │   ├── integrations/   # Gestão de Integrações
 │   │   │   └── page.tsx        # Landing Page
-│   │   ├── components/         # React Components
+│   │   ├── components/         # React Components (UI, Landing, Charts)
 │   │   │   ├── ui/             # Button, Card, Logo
 │   │   │   └── landing/        # Hero, Problem, Benefits, etc.
-│   │   └── lib/                # Utilities
+│   │   └── lib/                # Utilities & Hooks
 │   └── tailwind.config.ts      # TailwindCSS config (MAI theme)
 │
 ├── backend/                     # FastAPI + SQLAlchemy
 │   ├── app/
 │   │   ├── api/v1/             # API Endpoints
-│   │   │   ├── auth.py         # Register, Login, Password
-│   │   │   ├── decisions.py    # Evaluate, Score, Validate
+│   │   │   ├── auth.py         # Autenticação
+│   │   │   ├── decisions.py    # Avaliação e Scoring
 │   │   │   ├── users.py        # Profile, API Keys
-│   │   │   ├── campaigns.py    # Ads Sync, Metrics
-│   │   │   └── knowledge.py    # RAG Namespaces
+│   │   │   ├── campaigns.py    # Sincronização de Ads
+│   │   │   ├── knowledge.py    # RAG e Princípios
+│   │   │   └── integrations.py # Configuração de Plugins
 │   │   ├── core/               # Security, RBAC
 │   │   ├── engine/             # MAI Decision Engine
 │   │   │   ├── orchestrator.py # Central Pipeline
@@ -119,7 +126,7 @@ PROJETO/
 │   │   │   ├── scoring_engine.py    # MAI Score™
 │   │   │   └── validation_engine.py # Cross Validation
 │   │   ├── agents/             # Strategic Agents
-│   │   ├── integrations/       # Google Ads, Meta Ads
+│   │   ├── integrations/       # Conectores (Ads, Ecommerce, Tools)
 │   │   ├── models/             # SQLAlchemy Models
 │   │   └── schemas/            # Pydantic Schemas
 │   └── requirements.txt
@@ -148,15 +155,23 @@ PROJETO/
 | POST | `/api/v1/decisions/score` | Calcular MAI Score™ |
 | POST | `/api/v1/decisions/validate` | Cross-validation |
 | GET | `/api/v1/decisions/history` | Histórico de decisões |
-| GET | `/api/v1/decisions/{id}` | Detalhes de decisão |
 
-### Campaigns
+### Campaigns & Integrations
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/v1/campaigns` | Listar campanhas |
-| GET | `/api/v1/campaigns/aggregate` | Métricas agregadas |
 | POST | `/api/v1/campaigns/sync/google` | Sincronizar Google Ads |
 | POST | `/api/v1/campaigns/sync/meta` | Sincronizar Meta Ads |
+| POST | `/api/v1/campaigns/sync/tiktok` | Sincronizar TikTok Ads |
+| GET | `/api/v1/integrations` | Listar integrações disponíveis |
+| POST | `/api/v1/integrations/config` | Configurar credenciais |
+
+### Knowledge (RAG)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/knowledge/namespaces` | Listar domínios de conhecimento |
+| GET | `/api/v1/knowledge/principles` | Listar princípios estratégicos |
+| GET | `/api/v1/knowledge/namespaces/{id}/search` | Pesquisar no RAG |
 
 ---
 

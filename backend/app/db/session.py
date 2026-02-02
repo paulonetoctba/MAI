@@ -3,11 +3,18 @@ from sqlalchemy.orm import declarative_base
 from app.config import settings
 
 # Create async engine
+engine_kwargs = {
+    "echo": settings.DEBUG,
+}
+
+# SQLite and pool_size don't mix well in some versions/drivers
+if not settings.DATABASE_URL.startswith("sqlite"):
+    engine_kwargs["pool_size"] = settings.DATABASE_POOL_SIZE
+    engine_kwargs["max_overflow"] = 10
+
 engine = create_async_engine(
     settings.DATABASE_URL,
-    echo=settings.DEBUG,
-    pool_size=settings.DATABASE_POOL_SIZE,
-    max_overflow=10,
+    **engine_kwargs
 )
 
 # Create async session factory
